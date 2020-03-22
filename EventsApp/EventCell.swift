@@ -14,9 +14,11 @@ import ParseUI
 class EventCell: PFTableViewCell {
     
     @IBOutlet weak var eventImage: PFImageView!
+    
     @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
 }

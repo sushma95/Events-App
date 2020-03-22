@@ -28,9 +28,9 @@
 		3F662B7C240893DB00BB7EF0 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F662B7A240893D800BB7EF0 /* ParseUI.framework */; };
 		3F662B7D240893DB00BB7EF0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F662B7B240893DB00BB7EF0 /* Parse.framework */; };
 		3F662B7F240899BC00BB7EF0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F662B7E240899BC00BB7EF0 /* SignUpViewController.swift */; };
-		3F662B852408D2A200BB7EF0 /* AdEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F662B842408D2A200BB7EF0 /* AdEventViewController.swift */; };
 		3F662B872409C36700BB7EF0 /* EventsDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F662B862409C36700BB7EF0 /* EventsDisplay.swift */; };
 		3F662B892409C38000BB7EF0 /* NWEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F662B882409C38000BB7EF0 /* NWEventTableViewController.swift */; };
+		3F662BDB2412315400BB7EF0 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F662BDA2412315400BB7EF0 /* AddEventViewController.swift */; };
 		DC15C8FA07DB720E9BA5B71D /* Pods_EventsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F9F8CB8E3BA4C486CCF759 /* Pods_EventsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,9 +61,9 @@
 		3F662B7A240893D800BB7EF0 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		3F662B7B240893DB00BB7EF0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		3F662B7E240899BC00BB7EF0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		3F662B842408D2A200BB7EF0 /* AdEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdEventViewController.swift; sourceTree = "<group>"; };
 		3F662B862409C36700BB7EF0 /* EventsDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDisplay.swift; sourceTree = "<group>"; };
 		3F662B882409C38000BB7EF0 /* NWEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWEventTableViewController.swift; sourceTree = "<group>"; };
+		3F662BDA2412315400BB7EF0 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		57F9F8CB8E3BA4C486CCF759 /* Pods_EventsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54FC099C4B77A84C1952F19 /* Pods-EventsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.release.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 				3F662B862409C36700BB7EF0 /* EventsDisplay.swift */,
 				3F662B102407065800BB7EF0 /* Extensions.swift */,
 				3F662B7E240899BC00BB7EF0 /* SignUpViewController.swift */,
-				3F662B842408D2A200BB7EF0 /* AdEventViewController.swift */,
+				3F662BDA2412315400BB7EF0 /* AddEventViewController.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -280,8 +280,8 @@
 				3F662B7F240899BC00BB7EF0 /* SignUpViewController.swift in Sources */,
 				3F662ADF2406ED3900BB7EF0 /* SignIn.swift in Sources */,
 				3F662ADB2406ED3900BB7EF0 /* AppDelegate.swift in Sources */,
-				3F662B852408D2A200BB7EF0 /* AdEventViewController.swift in Sources */,
 				3F662ADD2406ED3900BB7EF0 /* SceneDelegate.swift in Sources */,
+				3F662BDB2412315400BB7EF0 /* AddEventViewController.swift in Sources */,
 				3F662B0F2406FD9E00BB7EF0 /* LoggedInViewController.swift in Sources */,
 				3F662B432408267500BB7EF0 /* EventCell.swift in Sources */,
 				3F662B872409C36700BB7EF0 /* EventsDisplay.swift in Sources */,

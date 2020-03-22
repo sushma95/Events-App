@@ -12,46 +12,67 @@ import ParseUI
 
 
 class EventsTableViewController: PFQueryTableViewController {
-
+ let optimalRowHeight:CGFloat = 200
     override func queryForTable() -> PFQuery<PFObject> {
         let query = PFQuery(className: "Events")
+        //query.order(byAscending: "location")
         query.order(byAscending: "date")
         return query
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.title = "Events"
+        // Do any additional setup after loading the view.
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "logout", style: .done, target: self, action: #selector(logout))
     }
+    
+    @objc func logout(){
+        
+        let next = storyboard?.instantiateViewController(identifier: "SignIn") as! SignIn
+        navigationController?.pushViewController(next, animated: true)
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+                return optimalRowHeight
+            }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EventCell
-//        cell.priceLabel.text = object?.object(forKey: "price") as? String
-//        cell.priceLabel.text = object?.object(forKey: "date") as? String
-//        cell.priceLabel.text = object?.object(forKey: "location") as? String
-//        let imageFile = object?.object(forKey: "image") as? PFFileObject
-//        cell.eventImage.file = imageFile
-//        cell.eventImage.loadInBackground()
-//        return cell
-
+    
+       override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, object: PFObject?) -> PFTableViewCell? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EventCell
         
-
-        return 0;
+        cell.priceLabel.text = object?.object(forKey: "price") as? String
+        cell.dateLabel.text = object?.object(forKey: "date") as? String
+        cell.locationLabel.text = object?.object(forKey: "location") as? String
+        cell.nameLabel.text = object?.object(forKey: "name") as? String
+        
+        let imageFile = object?.object(forKey: "image") as? PFFileObject
+        
+       
+        
+        cell.eventImage.file = imageFile
+        cell.eventImage.loadInBackground()
+        
+        return cell
         
         
     }
 
+
+  
+    @IBAction func reloadTable(_ sender: Any) {
+         self.loadObjects()
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
