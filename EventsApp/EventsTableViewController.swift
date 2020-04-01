@@ -16,7 +16,7 @@ class EventsTableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery<PFObject> {
         let query = PFQuery(className: "Events")
         //query.order(byAscending: "location")
-        query.order(byAscending: "date")
+        query.order(byDescending: "date")
         return query
     }
     
@@ -46,6 +46,7 @@ class EventsTableViewController: PFQueryTableViewController {
     
 
     // MARK: - Table view data source
+
     
        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, object: PFObject?) -> PFTableViewCell? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EventCell
