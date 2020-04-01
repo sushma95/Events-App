@@ -56,7 +56,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func createEvent(_ sender: Any)
     
     {
-        
+        if let image = imageView.image {
         let name = PFObject(className: "Events")
                 name["location"] = locationLabel.text
                 name["price"] = priceLabel.text
@@ -97,7 +97,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
                     
                 }
                 
-                
+        }
             }
             
 
