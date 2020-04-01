@@ -19,7 +19,7 @@ class SignIn: UIViewController {
      override func viewDidAppear(_ animated: Bool) {
            self.navigationController?.isNavigationBarHidden = true
            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-           backgroundImage.image = UIImage(named: "nwlogin.jpg")
+           backgroundImage.image = UIImage(named: "northwestmissouri.jpg")
            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
            self.view.insertSubview(backgroundImage, at: 0)
         
