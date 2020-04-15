@@ -105,7 +105,9 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
 
 
             self.present(alert, animated: true)
-            
+            nameLabel.text!=""
+            locationLabel.text!=""
+            priceLabel.text!=""
         }
         else {
             let alert = UIAlertController(title: "Please enter details", message: "", preferredStyle: .alert)
@@ -160,6 +162,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
                     UIImage {
                     
                     imageView.contentMode = .scaleAspectFit
+                    
                     imageView.image = pickedImage
                 }
                 
