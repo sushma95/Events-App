@@ -31,9 +31,14 @@ class EventsTableViewController: PFQueryTableViewController {
     }
     
     @objc func logout(){
-        
-        let next = storyboard?.instantiateViewController(identifier: "SignIn") as! SignIn
-        navigationController?.pushViewController(next, animated: true)
+        print("entered logout")
+        let alert = UIAlertController(title: "Do you really want to logout?", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action: UIAlertAction!) in
+            let next = self.storyboard?.instantiateViewController(identifier: "SignIn") as! SignIn
+            self.navigationController?.pushViewController(next, animated: true)
+        }))
+       
+         self.present(alert, animated: true)
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
                 return optimalRowHeight

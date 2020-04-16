@@ -24,6 +24,7 @@ class LoggedInViewController: UIViewController {
     }
 
     @IBAction func logoutOfApp(_ sender: UIButton) {
+        
         let sv = UIViewController.displaySpinner(onView: self.view)
         PFUser.logOutInBackground { (error: Error?) in
             UIViewController.removeSpinner(spinner: sv)

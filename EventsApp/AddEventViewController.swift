@@ -99,7 +99,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
                 
         }
         if nameLabel.text!.count > 0 && locationLabel.text!.count > 0 && priceLabel.text!.count > 0{
-            let alert = UIAlertController(title: "Event created successfully", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Event created successfully", message: "please view in event page", preferredStyle: .alert)
 
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
 
@@ -110,7 +110,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
             priceLabel.text!=""
         }
         else {
-            let alert = UIAlertController(title: "Please enter details", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Please enter all details", message: "", preferredStyle: .alert)
 
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
 
