@@ -7,31 +7,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Logged In View Controller-->
-        <scene sceneID="dvK-re-SUF">
+        <!--Passwor Reset View Controller-->
+        <scene sceneID="x3I-2i-02U">
             <objects>
-                <viewController storyboardIdentifier="LoggedInViewController" id="9uZ-9K-Nz9" customClass="LoggedInViewController" customModule="EventsApp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6cm-CE-Sr6">
+                <viewController storyboardIdentifier="passworResetViewController" id="W8e-Iu-elp" customClass="passworResetViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cpg-pF-eUM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LV6-gg-xMK">
-                                <rect key="frame" x="169" y="467" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awr-Gt-ReV">
+                                <rect key="frame" x="143" y="232" width="137" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Send"/>
                                 <connections>
-                                    <action selector="logoutOfApp:" destination="9uZ-9K-Nz9" eventType="touchUpInside" id="1KU-to-JiJ"/>
+                                    <action selector="sendButtontapped:" destination="W8e-Iu-elp" eventType="touchUpInside" id="wvK-oe-dw5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H48-Zb-jJN">
+                                <rect key="frame" x="143" y="340" width="127" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtontapped:" destination="W8e-Iu-elp" eventType="touchUpInside" id="KIG-81-Xps"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBd-oC-USq">
+                                <rect key="frame" x="26" y="127" width="347" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="jsv-Wz-emk"/>
+                        <viewLayoutGuide key="safeArea" id="Ksq-Fe-itf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gea-Zg-djY"/>
+                    <connections>
+                        <outlet property="emailAddressTextField" destination="FBd-oC-USq" id="BQZ-dP-EGl"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s3H-vs-Eb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nef-TA-z9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="235"/>
+            <point key="canvasLocation" x="2937.68115942029" y="904.6875"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="tne-QT-ifu">
@@ -101,6 +117,16 @@
                                 </state>
                                 <connections>
                                     <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AOx-TA-NMw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6v-oa-C66">
+                                <rect key="frame" x="103" y="551" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PasswordReset">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="PasswordReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PsD-JO-cGs"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -79,6 +79,19 @@ class SignIn: UIViewController {
               
            }
 
+    @IBAction func PasswordReset(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+              let resetPasswordVC = storyBoard.instantiateViewController(withIdentifier: "passworResetViewController") as! passworResetViewController
+              //signUpVC.modalPresentationStyle = .fullScreen
+              
+              
+                 //    self.present(signUpVC, animated: true, completion: nil)
+              
+              navigationController?.pushViewController(resetPasswordVC, animated: true)
+        
+    }
+             
+           
             func displayErrorMessage(message:String) {
                    let alertView = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
                    let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
