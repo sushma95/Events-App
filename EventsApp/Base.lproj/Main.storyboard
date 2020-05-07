@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Passwor Reset View Controller-->
+        <!--Password Reset View Controller-->
         <scene sceneID="x3I-2i-02U">
             <objects>
-                <viewController storyboardIdentifier="passworResetViewController" id="W8e-Iu-elp" customClass="passworResetViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="passworResetViewController" id="W8e-Iu-elp" customClass="PasswordResetViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cpg-pF-eUM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

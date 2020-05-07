@@ -15,13 +15,6 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet fileprivate var registerPasswordField: UITextField!
     
-  
-    
-  
-    
-    
-    
-    
         override func viewDidLoad() {
             super.viewDidLoad()
 
@@ -48,7 +41,7 @@ class SignUpViewController: UIViewController {
         }
         
     //This method is used for load sign in page to user
-    @IBAction func Signin(_ sender: Any) {
+    @IBAction func SignInBTN(_ sender: Any) {
         
         
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

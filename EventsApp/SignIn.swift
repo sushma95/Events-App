@@ -32,8 +32,8 @@ class SignIn: UIViewController {
     
     
     
-    // This function is about sigin of the username and password if credentials are wrong it displays an error
-    @IBAction func signIn(_ sender: UIButton) {
+    // This function is about sigin of the username and password if credentials are wrong it displays an error  
+    @IBAction func signInBTN(_ sender: UIButton) {
         
         let sv = UIViewController.displaySpinner(onView: self.view)
         PFUser.logInWithUsername(inBackground: signInUsernameField.text!, password: signInPasswordField.text!) { (user, error) in
@@ -50,7 +50,7 @@ class SignIn: UIViewController {
     
     
     // This  function is about signup when user dont register and it gets the signup page
-    @IBAction func signUp(_ sender: UIButton) {
+    @IBAction func signUpBTN(_ sender: UIButton) {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let signUpVC = storyBoard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
@@ -63,7 +63,7 @@ class SignIn: UIViewController {
     //This function is about password reset and it displays the passwordReset Page
     @IBAction func PasswordReset(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let resetPasswordVC = storyBoard.instantiateViewController(withIdentifier: "passworResetViewController") as! passworResetViewController
+        let resetPasswordVC = storyBoard.instantiateViewController(withIdentifier: "passworResetViewController") as! PasswordResetViewController
         navigationController?.pushViewController(resetPasswordVC, animated: true)
         
     }

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class passworResetViewController: UIViewController {
+class PasswordResetViewController: UIViewController {
     
     
     @IBOutlet weak var emailAddressTextField: UITextField!
@@ -26,7 +26,7 @@ class passworResetViewController: UIViewController {
     
     //This method is used for reset password in events page.
     
-    @IBAction func sendButtontapped(_ sender: AnyObject) {
+    @IBAction func sendBTNtapped(_ sender: AnyObject) {
         
         let emailAdress = emailAddressTextField.text
         if emailAdress?.isEmpty ?? true{
@@ -44,7 +44,7 @@ class passworResetViewController: UIViewController {
     
     //This is used to cancel the page and go back to sign in page.
     
-    @IBAction func cancelButtontapped(_ sender: AnyObject) {
+    @IBAction func cancelBTNtapped(_ sender: AnyObject) {
         
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
