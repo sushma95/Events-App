@@ -13,16 +13,18 @@ import ParseUI
 
 class LoggedInViewController: UIViewController {
     let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-
+    
+    
+    //This method is used for logout from the app
     @IBAction func logoutOfApp(_ sender: UIButton) {
         
         let sv = UIViewController.displaySpinner(onView: self.view)
@@ -36,11 +38,12 @@ class LoggedInViewController: UIViewController {
                 }else{
                     self.displayMessage(message: "error logging out")
                 }
-
+                
             }
         }
     }
-
+    
+    //This method is used for success messages
     func displayMessage(message:String) {
         let alertView = UIAlertController(title: "Message", message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
@@ -52,13 +55,14 @@ class LoggedInViewController: UIViewController {
         }
         self.present(alertView, animated: true, completion:nil)
     }
-
+    
+    //This method is used for load the login screen to the user
     func loadLoginScreen(){
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "SignIn") as! SignIn
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
     }
-
-
+    
+    
 }

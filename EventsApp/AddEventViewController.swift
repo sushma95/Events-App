@@ -12,7 +12,7 @@ import Parse
 import ParseUI
 
 class AddEventViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+    
     
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var locationLabel: UITextField!
@@ -25,85 +25,100 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBOutlet weak var imageView: UIImageView!
     
+    
     let imagePicker = UIImagePickerController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         datePicker.addTarget(self, action: #selector(datePickerChanged(datePicker:)), for: UIControlEvents.valueChanged)
         
         dateFormat()
         
         imagePicker.delegate = self
+        
+        nameLabel.inputView = UIView()
+        locationLabel.inputView = UIView()
+        priceLabel.inputView = UIView()
+        dateLabel.inputView = UIView()
         // Do any additional setup after loading the view.
+        
     }
     
-
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         imageButton.isHidden = false
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func createEvent(_ sender: Any)
+    //This function clears all the labels in the events page
+    @IBAction func clearEvent(_ sender: Any){
+        nameLabel.text!=""
+        locationLabel.text!=""
+        priceLabel.text!=""
+    }
     
+    
+    //This method is used to create event at event page and displays the error message if details are not created
+    @IBAction func createEvent(_ sender: Any)
+        
     {
         if let image = imageView.image {
-        let name = PFObject(className: "Events")
-                name["location"] = locationLabel.text
-                name["price"] = priceLabel.text
-                name["date"] = dateLabel.text
-                name["name"] = nameLabel.text
-
-        let imageData =  UIImagePNGRepresentation(self.imageView.image!)
-                let parseImageFile = PFFileObject(name: "uploaded_image.png", data: imageData!)
+            let name = PFObject(className: "Events")
+            name["location"] = locationLabel.text
+            name["price"] = priceLabel.text
+            name["date"] = dateLabel.text
+            name["name"] = nameLabel.text
+            
+            let imageData =  UIImagePNGRepresentation(self.imageView.image!)
+            let parseImageFile = PFFileObject(name: "uploaded_image.png", data: imageData!)
+            
+            name["image"] = parseImageFile
+            
+            name.saveInBackground {
+                (success: Bool, error: Error?) -> Void in
                 
-                name["image"] = parseImageFile
-                
-                name.saveInBackground {
-                    (success: Bool, error: Error?) -> Void in
+                if (success) {
+                    print("success")
                     
-                    if (success) {
-                        print("success")
-                        
-                    }else{
-                        
-                        print("error")
-                        
-                    }
+                }else{
                     
-                    
+                    print("error")
                     
                 }
                 
                 
-                name.saveInBackground {
-                    (success: Bool, error: Error?) -> Void in
+                
+            }
+            
+            
+            name.saveInBackground {
+                (success: Bool, error: Error?) -> Void in
+                
+                if (success) {
                     
-                    if (success) {
-                        
-                        
-                    }else {
-                        
-                    }
+                    
+                }else {
                     
                 }
                 
+            }
+            
         }
         if nameLabel.text!.count > 0 && locationLabel.text!.count > 0 && priceLabel.text!.count > 0{
             let alert = UIAlertController(title: "Event created successfully", message: "please view in event page", preferredStyle: .alert)
-
+            
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-
-
+            
+            
             self.present(alert, animated: true)
             nameLabel.text!=""
             locationLabel.text!=""
@@ -111,40 +126,41 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         }
         else {
             let alert = UIAlertController(title: "Please enter all details", message: "", preferredStyle: .alert)
-
+            
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-
-
+            
+            
             self.present(alert, animated: true)
         }
         
-            }
-            
-
-            
-            func dateFormat() {
-                
-                let dateFormatter = DateFormatter()
-                let short = DateFormatter.Style.short
-                dateFormatter.dateStyle = short
-                dateFormatter.timeStyle = short
-                dateFormatter.dateFormat = "MM/dd/YY hh:mm a"
-                
-                let strDate = dateFormatter.string(from: datePicker.date)
-                
-                dateLabel.text = strDate
-                
-                
-            }
-            
-            @objc func datePickerChanged(datePicker:UIDatePicker) {
-                
-                dateFormat()
-            }
-            
-
-            
+    }
     
+    
+    //This method is used to format date
+    func dateFormat() {
+        
+        let dateFormatter = DateFormatter()
+        let short = DateFormatter.Style.short
+        dateFormatter.dateStyle = short
+        dateFormatter.timeStyle = short
+        dateFormatter.dateFormat = "MM/dd/YY hh:mm a"
+        
+        let strDate = dateFormatter.string(from: datePicker.date)
+        
+        dateLabel.text = strDate
+        
+        
+    }
+    
+    
+    @objc func datePickerChanged(datePicker:UIDatePicker) {
+        
+        dateFormat()
+    }
+    
+    
+    
+    // This is used for load image at create event page.
     
     @IBAction func loadImage(_ sender: Any) {
         
@@ -155,27 +171,29 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         present(imagePicker, animated: true, completion: nil)
     }
     
-     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-                
-                if let pickedImage = info[UIImagePickerControllerOriginalImage] as?
-                
-                    UIImage {
-                    
-                    imageView.contentMode = .scaleAspectFit
-                    
-                    imageView.image = pickedImage
-                }
-                
-                dismiss(animated: true, completion: nil)
-                
-                
-            }
+    
+    //This method is used for pick a partiular image from selection.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as?
             
+            UIImage {
             
-            func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-                dismiss(animated: true, completion: nil)
-            }
-
-
-
+            imageView.contentMode = .scaleAspectFit
+            
+            imageView.image = pickedImage
         }
+        
+        dismiss(animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+}

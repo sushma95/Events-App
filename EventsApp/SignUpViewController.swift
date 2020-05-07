@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController {
             // Do any additional setup after loading the view.
         }
         
-        
+        //This method is used to load sign up page to user
         @IBAction func signUpTapped(_ sender: Any) {
             let user = PFUser()
                        user.username = registerUsernameField.text
@@ -47,6 +47,7 @@ class SignUpViewController: UIViewController {
                        }
         }
         
+    //This method is used for load sign in page to user
     @IBAction func Signin(_ sender: Any) {
         
         
@@ -54,6 +55,7 @@ class SignUpViewController: UIViewController {
                 let signInVC = storyBoard.instantiateViewController(withIdentifier: "SignIn") as! SignIn
          navigationController?.pushViewController(signInVC, animated: true)
     }
+    //This method is used for loading the home screen
     
         func loadHomeScreen(){
                  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -61,6 +63,7 @@ class SignUpViewController: UIViewController {
                          
                          navigationController?.pushViewController(loggedInViewController, animated: true)
               }
+    //This method is used for display error messages.
         
         func displayErrorMessage(message:String) {
                 let alertView = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
