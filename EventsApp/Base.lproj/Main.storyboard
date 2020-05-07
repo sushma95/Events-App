@@ -25,7 +25,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendButtontapped:" destination="W8e-Iu-elp" eventType="touchUpInside" id="wvK-oe-dw5"/>
+                                    <action selector="sendBTNtapped:" destination="W8e-Iu-elp" eventType="touchUpInside" id="eCp-B3-EIF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H48-Zb-jJN">
@@ -37,7 +37,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelButtontapped:" destination="W8e-Iu-elp" eventType="touchUpInside" id="KIG-81-Xps"/>
+                                    <action selector="cancelBTNtapped:" destination="W8e-Iu-elp" eventType="touchUpInside" id="FCP-7l-Rhx"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBd-oC-USq">
@@ -127,7 +127,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="14j-pU-zy1"/>
+                                    <action selector="signUpBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WT8-kC-uok"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjW-Bu-hOh">
@@ -139,7 +139,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AOx-TA-NMw"/>
+                                    <action selector="signInBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ftb-d9-4aC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6v-oa-C66">
@@ -243,7 +243,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="Signin:" destination="Vkt-dy-QPz" eventType="touchUpInside" id="m1C-Ui-JOY"/>
+                                    <action selector="SignInBTN:" destination="Vkt-dy-QPz" eventType="touchUpInside" id="ka5-ye-BCE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVG-Gp-uHn">
@@ -255,7 +255,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpTapped:" destination="Vkt-dy-QPz" eventType="touchUpInside" id="EAb-wa-AkC"/>
+                                    <action selector="signUpTapped:" destination="Vkt-dy-QPz" eventType="touchUpInside" id="bhU-Lz-Pk8"/>
                                 </connections>
                             </button>
                         </subviews>

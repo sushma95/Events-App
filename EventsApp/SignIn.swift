@@ -34,6 +34,7 @@ class SignIn: UIViewController {
     
     // This function is about sigin of the username and password if credentials are wrong it displays an error  
     @IBAction func signInBTN(_ sender: UIButton) {
+    
         
         let sv = UIViewController.displaySpinner(onView: self.view)
         PFUser.logInWithUsername(inBackground: signInUsernameField.text!, password: signInPasswordField.text!) { (user, error) in
